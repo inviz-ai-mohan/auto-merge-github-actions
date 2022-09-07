@@ -1,3 +1,4 @@
+----
 apiversion: apps/v1
 kind: Deployment
 metadata:
@@ -127,3 +128,4 @@ spec:
   ports:
   - port: 27017
     targetPort: 27017
+    ------------
