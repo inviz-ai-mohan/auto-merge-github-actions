@@ -10,7 +10,7 @@ jobs:
       - uses: actions/checkout@master
 
       - name: Merge Development -> staging
-        uses: devmasx/merge-branch@master
+        uses: actions/merge-branch@master
         with:
           type: now
           from_branch: Development
@@ -18,7 +18,7 @@ jobs:
           github_token: ${{ github.token }}
 
       - name: Merge staging -> uat
-        uses: devmasx/merge-branch@master
+        uses: actions/merge-branch@master
         with:
           type: now
           from_branch: staging
