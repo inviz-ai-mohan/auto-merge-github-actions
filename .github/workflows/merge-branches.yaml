@@ -10,7 +10,7 @@ jobs:
       - uses: actions/checkout@master
 
       - name: Merge Development -> staging
-        uses: devmasx/merge-branch@master
+        uses: inviz-ai-mohan/merge-branch@master
         with:
           type: now
           from_branch: Development
