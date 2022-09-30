@@ -6,6 +6,9 @@ on:
 jobs:
   sync-branch:
     runs-on: ubuntu-latest
+    env:
+      GOPRIVATE: github.com/fabianMendez/privatemodule
+      GH_ACCESS_TOKEN: ${{ secrets.GH_ACCESS_TOKEN }}
     steps:
       - uses: actions/checkout@master
 
@@ -24,7 +27,8 @@ jobs:
           from_branch: staging
           target_branch: uat
           github_token: ${{ github.token }}
-          
+      -  run: git config --global url.https://$GH_ACCESS_TOKEN@github.com/.insteadOf https://github.com/
+      
       - name: Merge uat -> QA
         uses: devmasx/merge-branch@master
         with:
